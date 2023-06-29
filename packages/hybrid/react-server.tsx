@@ -1,2 +1,1 @@
-export { testShared } from './shared'
-
+export { shared } from './shared'

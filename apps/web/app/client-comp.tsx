@@ -1,12 +1,16 @@
 'use client'
-import { testClientOnly } from 'client-lib'
-import { testHybridClient } from 'hybrid-lib'
+import { clientOnly } from 'client-lib'
+import { shared, clientOnlyInSharded } from 'hybrid-lib'
 
 export default function Page() {
   return (
-    <>
-      <div>{testClientOnly()}</div>
-      <div>{testHybridClient()}</div>
-    </>
+    <div style={{
+      border: '1px solid red',
+    }}>
+      <div>client component</div>
+      <div>{clientOnly()}</div>
+      <div>{shared()}</div>
+      <div>{clientOnlyInSharded()}</div>
+    </div>
   );
 }

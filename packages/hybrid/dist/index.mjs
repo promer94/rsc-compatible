@@ -1,12 +1,12 @@
 import {
-  testShared
-} from "./chunk-RYXX2JRV.mjs";
+  shared
+} from "./chunk-VNFXJD4N.mjs";
 
 // index.tsx
-var testHybridClient = () => {
-  return "this api only available on client component";
+var clientOnlyInSharded = () => {
+  return "I am a method that is only available in the client components";
 };
 export {
-  testHybridClient,
-  testShared
+  clientOnlyInSharded,
+  shared
 };

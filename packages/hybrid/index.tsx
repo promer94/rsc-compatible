@@ -1,5 +1,5 @@
-export { testShared } from './shared'
+export { shared } from './shared'
 
-export const testHybridClient = () => {
-  return 'This method is only available on the client component'
+export const clientOnlyInSharded = () => {
+  return 'I am a method that is only available in the client components'
 }

@@ -1,8 +1,8 @@
 // index.tsx
 import "server-only";
-var testServerOnly = () => {
-  return "server component rocks!";
+var serverOnly = () => {
+  return "I should only be used in server components";
 };
 export {
-  testServerOnly
+  serverOnly
 };

@@ -1,3 +1,3 @@
-declare const testServerOnly: () => string;
+declare const serverOnly: () => string;
 
-export { testServerOnly };
+export { serverOnly };

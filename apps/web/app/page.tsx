@@ -1,12 +1,14 @@
 import ClientComponent from './client-comp'
-import { testServerOnly } from 'server-lib'
-import { testShared } from 'hybrid-lib'
+import { serverOnly } from 'server-lib'
+import { shared } from 'hybrid-lib'
+
 export default function Page() {
   return (
-    <>
-      {testServerOnly()}
-      {testShared()}
+    <div className=''>
+      <div>server components</div>
+      <div>{serverOnly()}</div>
+      <div>{shared()}</div>
       <ClientComponent></ClientComponent>
-    </>
+    </div>
   );
 }

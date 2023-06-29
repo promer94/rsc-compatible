@@ -1,8 +1,8 @@
 // index.tsx
 import "client-only";
-var testClientOnly = () => {
-  return "client component rocks!";
+var clientOnly = () => {
+  return "I should be used in client components";
 };
 export {
-  testClientOnly
+  clientOnly
 };

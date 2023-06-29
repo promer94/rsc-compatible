@@ -1,5 +1,5 @@
-declare const testShared: () => string;
+declare const shared: () => string;
 
-declare const testHybridClient: () => string;
+declare const clientOnlyInSharded: () => string;
 
-export { testHybridClient, testShared };
+export { clientOnlyInSharded, shared };

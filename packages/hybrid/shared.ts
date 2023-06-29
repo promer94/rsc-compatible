@@ -1,3 +1,3 @@
-export const testShared = () => {
-  return 'This is a method which could be shared between client component and server component'
+export const shared = () => {
+  return 'I am shared method which could be used in both server component and client component'
 }

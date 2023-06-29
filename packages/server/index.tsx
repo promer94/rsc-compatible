@@ -1,5 +1,5 @@
 import 'server-only'
 
-export const testServerOnly = () => {
-  return 'this methods could only be used in server components'
+export const serverOnly = () => {
+  return 'I should only be used in server components'
 }
