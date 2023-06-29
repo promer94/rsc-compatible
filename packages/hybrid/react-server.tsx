@@ -1,0 +1,2 @@
+export { testShared } from './shared'
+
