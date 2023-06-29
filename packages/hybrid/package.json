@@ -1,6 +1,6 @@
 {
   "name": "hybrid-lib",
-  "description": "A lib has different APIs for server component and client component",
+  "description": "A lib has limited APIs for server component",
   "version": "0.0.0",
   "exports": {
     "import": "./dist/index.mjs",
