@@ -1,5 +1,5 @@
 import 'client-only'
 
 export const clientOnly = () => {
-  return 'I should be used in client components'
+  return 'import { clientOnly } from "client-lib" ✅'
 }

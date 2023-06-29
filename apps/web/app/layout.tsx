@@ -1,3 +1,4 @@
+import './style.css'
 export default function RootLayout({
   children,
 }: {
@@ -5,7 +6,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className='p-8'>
         {children}
       </body>
     </html>

@@ -1,7 +1,7 @@
 // index.tsx
 import "client-only";
 var clientOnly = () => {
-  return "I should be used in client components";
+  return 'import { clientOnly } from "client-lib" \u2705';
 };
 export {
   clientOnly
