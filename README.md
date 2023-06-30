@@ -39,8 +39,8 @@ In general, There are three kinds of library based on its runtime compatibility.
 
 ```json
 {
-  exports:{
-    ".":{
+  "exports": {
+    ".": {
       "import": "./dist/lib.mjs",
       "react-server": "./dist/lib.react-server.mjs"
     }
