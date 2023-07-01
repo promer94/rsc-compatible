@@ -9,7 +9,7 @@
       "DOM"
     ],
     "module": "NodeNext",
-    "moduleResolution": "Bundler",
+    "moduleResolution": "Node",
     "target": "es6"
   }
 }

@@ -19,7 +19,7 @@
       "esnext"
     ],
     "module": "NodeNext",
-    "moduleResolution": "Bundler",
+    "moduleResolution": "Node",
     "noEmit": true,
     "resolveJsonModule": true,
     "strict": false,

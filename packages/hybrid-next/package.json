@@ -2,6 +2,17 @@
   "name": "hybrid-lib-next",
   "description": "A lib has limited APIs for server component",
   "version": "0.0.0",
+  "types": "./dist/index.shared.d.mts",
+  "typesVersions": {
+    "*": {
+      "server": [
+        "./dist/index.react-server.d.mts"
+      ],
+      "client": [
+        "./dist/index.client.d.mts"
+      ]
+    }
+  },
   "exports": {
     ".": "./dist/index.shared.mjs",
     "./server": "./dist/index.react-server.mjs",
