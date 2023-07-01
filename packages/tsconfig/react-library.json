@@ -10,6 +10,6 @@
     ],
     "module": "NodeNext",
     "moduleResolution": "Node",
-    "target": "es6"
+    "target": "ES2018"
   }
 }
