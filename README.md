@@ -12,7 +12,7 @@ In general, There are three kinds of library based on its runtime compatibility.
 
 * **client only** does not means your lib can't be used for pre-rendering (SSR, SSG, ISR).  You still need to make you lib SSR compatible.
 
-* A lib should be **client only** if it uses lots of client side hook (useState, useRef, etc) and requires user interactions.  A typical examples would be react hook collections.
+* A lib should be **client only** if it uses lots of client side hook (useState, useRef, etc) and requires user interactions.  A typical example would be react hook collections.
 
 ### Make your lib **client only**
   * `npm install client-only`
