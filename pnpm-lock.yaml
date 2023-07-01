@@ -31,6 +31,9 @@ importers:
       hybrid-lib:
         specifier: workspace:*
         version: link:../../packages/hybrid
+      hybrid-lib-next:
+        specifier: workspace:*
+        version: link:../../packages/hybrid-next
       next:
         specifier: ^13.4.7
         version: 13.4.7(react-dom@18.2.0)(react@18.2.0)

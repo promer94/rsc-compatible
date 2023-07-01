@@ -3,7 +3,7 @@
   "description": "A lib should only be used in client component",
   "version": "0.0.0",
   "exports": {
-    "import": "./dist/index.mjs"
+    ".": "./dist/index.mjs"
   },
   "license": "MIT",
   "scripts": {
