@@ -1,18 +1,18 @@
 # Make your library RSC compatible
 
-This is a incomplete guide for lib authors and maintainers who wants to make their libs RSC compatible.
+This guide is intended for library authors and maintainers who wish to make their libraries RSC compatible. **It's incomplete now and will be updated as i learn more.**
 
-Most of libraries should just work if they are in the correct runtime. But it would be better if libraries can give clear hints when user does not pick the right runtime .
+Most libraries should function correctly if they are in the appropriate runtime. However, it would be more developer friendly if libraries could provide clear hints when users do not select the correct runtime.
 
-In general, There are three kinds of library based on its runtime compatibility.
+In general, libraries can be categorized into three types based on their runtime compatibility.
 
 ## Client Only
 
-* **client only** means your lib can only be used in client component. It needs to be used with **'use client'** directive.
+* **Client only** means your lib can only be used in client component. It needs to be used with **'use client'** directive.
 
-* **client only** does not means your lib can't be used for pre-rendering (SSR, SSG, ISR).  You still need to make you lib SSR compatible.
+* **Client only** does not mean your library cannot be used for pre-rendering (SSR, SSG, ISR). You still need to ensure your library is SSR compatible.
 
-* A lib should be **client only** if it uses lots of client side hook (useState, useRef, etc) and requires user interactions.  A typical example would be react hook collections.
+* A library should be designated as **client only** if it uses client-side hooks (useState, useRef, etc) and requires user interactions. A typical example would be react hooks collections.
 
 ### Make your lib **client only**
   * `npm install client-only`
@@ -21,21 +21,21 @@ In general, There are three kinds of library based on its runtime compatibility.
 
 ## Server Only
 
-* **server only** means your lib can only be used in server component.
-* **server only** lib can't be used in client components and should not be bundled into client assets
-* A lib should be **server-only** if it uses Node.js api or has native dependencies.
+* **Server only** means your lib can only be used in server component.
+* **Server only** lib can't be used in client components and should not be bundled into client assets
+* A library should be designated as **server-only** if it uses Node.js api or has native dependencies.
 ### Make your lib **server only**
   * `npm install server-only`
   * add `import 'server-only'` to the top of your lib entry.
 
 ## Hybrid
-* hybrid means your library has different APIs collections in different runtime.
-* hybrid lib need to have separate entries for different runtime. **If you lib only has a single entry then it is RSC incompatible. Users won't be able to import your lib in RSC.**
+* Hybrid means your library has different APIs collections in different runtime.
+* A hybrid library needs to have separate entries for different runtimes. **If you lib only has a single entry then it is RSC incompatible. Users won't be able to import your lib in RSC.**
 ### Make your hybrid lib RSC compatible without introducing breaking change
 
-* create a new entry for APIs which could be used in server components.
+* Create a new entry for APIs which could be used in server components.
 
-* use it as **react-server** exports in your lib. 
+* Use it as **react-server** exports in your lib. 
 
 ```json
 {
@@ -47,8 +47,7 @@ In general, There are three kinds of library based on its runtime compatibility.
   }
 }
 ```
-This approach has some drawbacks.
 
-* If you import APIs that are not available RSC, typescript would not be able to throw the error.
-* Bundler will throw the error but the error message might not be helpful.
+This approach has drawbacks. If you import APIs that are not available RSC, typescript would not be able to throw the error. Bundler will throw error but the message is ambiguous. You also need to make a list of APIs that are available in RSC and document them separately.
+
 
