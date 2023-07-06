@@ -1,7 +1,7 @@
 import { defineConfig } from 'tsup'
 
 export default defineConfig({
-  "entry": ["index.client.tsx", "index.react-server.tsx", "index.shared.tsx"],
+  "entry": ["index.tsx", "server-entry.tsx", "client-entry.tsx"],
   "format": ["esm"],
   "dts": true,
   "clean": true
