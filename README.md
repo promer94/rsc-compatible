@@ -1,5 +1,4 @@
 # Make your library RSC compatible
-
 This guide is intended for library authors and maintainers who wish to make their libraries RSC compatible. **It's incomplete now and will be updated as i learn more.**
 
 Most libraries should function correctly if they are in the appropriate runtime. However, it would be more developer friendly if libraries could provide clear hints when users do not select the correct runtime.
@@ -50,4 +49,10 @@ In general, libraries can be categorized into three types based on their runtime
 
 This approach has drawbacks. If you import APIs that are not available RSC, typescript would not be able to throw the error. Bundler will throw error but the message is ambiguous. You also need to make a list of APIs that are available in RSC and document them separately.
 
+
+## Reference
+
+* [server-module-conventions](https://github.com/reactjs/rfcs/blob/main/text/0227-server-module-conventions.md)
+* [directives](https://react.dev/reference/react/directives)
+* [react essentials](https://nextjs.org/docs/getting-started/react-essentials)
 
