@@ -5,18 +5,18 @@
   "types": "./dist/index.d.mts",
   "typesVersions": {
     "*": {
-      "server": [
-        "./dist/server-entry.d.mts"
+      "server-only": [
+        "./dist/server.d.mts"
       ],
-      "client": [
-        "./dist/client-entry.d.mts"
+      "shared": [
+        "./dist/shared.d.mts"
       ]
     }
   },
   "exports": {
-    ".": "./dist/index.mjs",
-    "./server": "./dist/server-entry.mjs",
-    "./client": "./dist/client-entry.mjs"
+    "./shared": "./dist/shared.mjs",
+    "./server": "./dist/server.mjs",
+    ".": "./dist/index.mjs"
   },
   "license": "MIT",
   "scripts": {

@@ -1,3 +1,4 @@
-export const shared = () => {
-  return 'import { shared } from "hybird-lib" ✅'
+import 'client-only'
+export const clientOnly = () => {
+  return `import { clientOnly } from 'hybrid-lib-next/client' ✅`
 }
