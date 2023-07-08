@@ -1,10 +1,16 @@
-# Make your library RSC compatible
-This guide is intended for library authors and maintainers who wish to make their libraries RSC compatible. **It's incomplete now and will be updated as i learn more.**
+# Make your React library RSC compatible
+This guide is intended for library authors or maintainers who wish to make their libraries RSC compatible. **It's incomplete now and will be updated as i learn more.**
 
-Most libraries should function correctly if they are in the appropriate runtime. However, it would be more developer friendly if libraries could provide clear hints when users do not select the correct runtime.
+## The problem
 
-In general, libraries can be categorized into three types based on their runtime compatibility.
+React now has different types of component which has different APIs available to them.
+* **Recat Server Component (RSC)** 
+React Server Component is a new feature introduced in React 18. It allows developers to write React components which **can only be rendered on the server**. It can't use any client-side hooks (useState, etc) and Web APIs. It can use Node.js APIs or Web Platform APIs.
 
+* **Client Component**
+Client Component is the component we used to familiar with.It has client-side interactivity and can use client-side hooks (useState, useRef, etc) and Web APIs.
+
+So if your library uses client-side hooks (useState, etc) and Web APIs, it would throw runtime error in RSC.
 ## Client Only
 
 * **Client only** means your lib can only be used in client component. It needs to be used with **'use client'** directive.
@@ -51,8 +57,7 @@ This approach has drawbacks. If you import APIs that are not available RSC, type
 
 
 ## Reference
-
-* [server-module-conventions](https://github.com/reactjs/rfcs/blob/main/text/0227-server-module-conventions.md)
 * [directives](https://react.dev/reference/react/directives)
 * [react essentials](https://nextjs.org/docs/getting-started/react-essentials)
+* [server-module-conventions](https://github.com/reactjs/rfcs/blob/main/text/0227-server-module-conventions.md)
 
