@@ -3,12 +3,12 @@ This guide is intended for library authors or maintainers who wish to make their
 
 ## Your library might be used in wrong environment
 
-React now has different types of component which has different runtime APIs available to them.
+React now has different types of components which have different runtime APIs available.
 
 * **Recat Server Component (RSC)** 
-is a new feature introduced in React 18. It allows developers to write React components which can only be rendered on the server. **It can't use any client-side hooks (useState, etc) and Web APIs**. It can use Node.js APIs or Web Platform APIs.
+is a new feature introduced in React 18. It allows developers to write React components which can only be rendered on the server. **It can't use any client-side hooks (useState, etc) and browser APIs**. It has access to APIs and libs available on the server, usually Node.js APIs.
 
-* **Client Component** is the component we used to familiar with.It has client-side interactivity and can use client-side hooks (useState, useRef, etc) and Web APIs.
+* **Client Component** is the component we are already familiar with. It can contain client-side interactivity and client-side hooks (useState, useRef, etc) and use browser APIs.
 
 So conceptually, a React Application will have two separate bundles - RSC bundle and client bundle. The RSC bundle will be only be executed on the server. The client bundle is primarily rendered on the client side but could also be used for pre-rendering (SSR, SSG, ISR).
 
@@ -41,16 +41,17 @@ clientOnly();
 function ClientComponent() {
   return <div>Client Component</div>;
 }
-```  
-### Marker Packages
+```
 
-The error message above is not informative enough for users to come up the correct solution. Instead, it will probably confuse users who are not familiar with RSC since they would assume `localStorge` should always be available. As a library author, you could improve this by using marker packages provided by React.
+### Guard Imports
 
-* **client-only** is a marker package that indicates that the package is only intended to be used in client components. You can import it at the top of your library's entry to provide informative error messages to users when they try to use your library in RSC.
+The error message above is not informative enough for users to come up the correct solution. Instead, it will probably confuse users who are not familiar with RSC since they would assume `localStorge` should always be available. As a library author, you could improve this by using special packages published by the React team.
+
+* **client-only** is a package that indicates that the package is only intended to be used in Client Components. When used in Server Components, it will throw an error. You can import it at the top of your library's entry to provide informative error messages to users when they try to use your library in RSC.
 
 ![client-only-in-RSC](./screenshot/client-only-in-RSC.png)
 
-* **server-only** is a marker package that indicates that the package is only intended to be used in RSC. You can import it at the top of your library's entry to provide informative error messages to users when they try to use your library in client components.
+* **server-only** is a package that indicates that the package is only intended to be used in RSC. You can import it at the top of your library's entry to provide informative error messages to users when they try to use your library in client components.
 
 ![server-only-in-client](./screenshot/server-only-in-client.png)
 
